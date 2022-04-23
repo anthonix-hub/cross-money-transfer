@@ -2,7 +2,7 @@ from django.urls import path
 from hi_hiApp import views
 
 urlpatterns = [
-    path('index', views.index, name='index'),
+    path('', views.index, name='index'),
     path('account_info', views.account_info, name='account_info'),
     path('activity', views.activity, name='activity'),
     path('add_to_pot', views.add_to_pot, name='add_to_pot'),
