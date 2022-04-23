@@ -1,1 +1,1 @@
-web gunicorn hi_hiapp.wsgi:application --log-file -
+web: gunicorn hi_hiProj.wsgi
