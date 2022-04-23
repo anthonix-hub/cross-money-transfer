@@ -1,0 +1,80 @@
+@media screen and (max-width: 570px) {
+    .open-menu {
+        display: flex;
+        font-size: 30px;
+        color: var(--smoke-white);
+        padding: 10px;
+        background: linear-gradient(45deg, blueviolet, deeppink);
+    }
+
+    .navbar .close-menu {
+        display: none;
+        align-self: center;
+        font-size: 30px;
+        color: var(--smoke-white);
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .navbar.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 80vh;
+        justify-content: space-evenly;
+
+    }
+
+    .logo {
+        display: flex;
+        width: 30%;
+        justify-content: flex-start;
+    }
+
+    .nav-group {
+        flex-direction: column;
+        margin: 10px auto;
+    }
+
+    .nav-item {
+        align-self: center;
+        margin-top: 20px;
+    }
+
+   
+
+    .main {
+        justify-content: center;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .call-to-action{
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .registration{
+        width: 90%;
+    }
+
+    .form-group{
+        width: 100%;
+    }
+
+    .check-box-group{
+        width: 100%;
+        margin-left: 0;
+    }
+    .footer-group {
+        flex-direction: column;
+    }
+
+    .footer{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+}

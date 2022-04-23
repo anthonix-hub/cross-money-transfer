@@ -1,0 +1,118 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/tailwind.css' %}">
+        {% include 'hi_hiApp/head.html' %}
+    <title>HI-hi</title>
+</head>
+<body>
+    <!--Header Section-->
+    
+    <header>
+        {% include 'hi_hiApp/header.html' %}
+    </header>
+    <!--Main-->
+    {% if messages %}
+        <div class="flex justify-center bg-red-600 text-gray-50 text-center px-4 py-1 mt-3 message">
+            <ul>
+                {% for message in messages %}
+                <li class="{{message.tags}}">
+                    {{message}}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    <!-- <form method=""> -->
+    <form method="post">
+        {% csrf_token %}
+        <main class="main "> 
+            <section class="">
+                <div class="send-main py-12 px-1 md:px-4 border-2 block rounded-md ">
+                    <div class="border-2 px-4 md:px-20 py-12 shadow-xl rounded-md ">
+                        <!-- {{transaction_form}} -->
+                        <div class="flex items-center bg-gray-50 border pl-3 py- ">
+                            <label for="Name" class="text-md">Send&nbsp;money&nbsp;to:</label>
+                            <input type="text" name="user" id="user" class="px-2 py-2 outline-none " placeholder="enter receiver's name">
+                        </div>
+                        <div class="mt-2 ">
+                            <div class="flag-group flex border">
+                                <input type="text" placeholder="amount" name="amount" id="amount" class="px-2 outline-none border py-2">
+                                <select name="Currency" id="Currency">
+                                    <option value="NG">🇳🇬NG</option>
+                                    <option value="GH">🇬🇭GH</option>
+                                    <option value="UK">🇬🇧UK</option>
+                                    <!-- <option value="CH">🇨🇳CH</option>
+                                    <option value="USA">🇺🇸USA</option>
+                                    <option value="SNG">🇸🇬SNG</option> -->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="flex justify-center mt-2">
+                            <button type="submit" class="bg-purple-500 px-8 py-2 text-gray-50 rounded-md hover:bg-purple-800 ">
+                                Send
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {% comment %} <section class="content-section">
+                <div class="send-main">
+                    <div class="send-card">
+                        <div class="form-group">
+                           <p>Send&nbsp;money&nbsp;to</p>
+                            <input type="text" name="" id="send" placeholder="Enter amount">
+                        </div>
+                        <div class="flag-group">
+                            <select name="countries" id="">
+                                <option value="NG">🇳🇬NG</option>
+                                <option value="">🇬🇭GH</option>
+                                <option value="">🇨🇳CH</option>
+                                <option value="">🇺🇸USA</option>
+                                <option value="">🇬🇧UK</option>
+                                <option value="">🇸🇬SNG</option>
+                            </select>
+                        </div>
+                        <div>
+                            <button style="background:#ffc;height:25px;padding:4px">Send&nbsp;money</button>
+                        </div>
+                    </div>
+                </div>
+            </section>       {% endcomment %}
+        </main>
+    </form>
+
+    <footer class="footer">
+        <ul class="footer-group">
+            <li class="footer-item">
+                contact us
+            </li>
+             <li class="footer-item">
+                feedback
+            </li>
+             <li class="footer-item">
+                security
+            </li>
+        </ul>
+        <span class="copy" >&copy;2022 All Rights Reserved</span>
+    </footer>
+
+<script src="{% static 'js/dashboard.js' %}"></script>
+<script>
+    window.setTimeout(function(){
+        $(".message").fadeTo(400, 0).slideUp(400, function(){
+            $(this).remove();
+        });
+    }, 3000);
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'hi_hiApp/head.html' %}
+    <title>HI-hi</title>
+    
+</head>
+<body>
+    <!--Header Section-->
+    <header>
+        <div class="logo">
+            <a href="{% url 'index' %}">
+                <img src="{% static 'img/swift+logo+2.+svg.svg' %} " alt="" srcset="">
+            </a>
+        </div>
+        <nav class="navbar-sign-up">
+           
+            <ul class="nav-group">
+                <li class="nav-item">
+                    <a href="{% url 'index' %}" class="nav-link">Home</a>
+                </li>
+            <ul> 
+        </nav>
+    </header>
+    <!--Main-->
+    <form method="post" >
+        {% csrf_token %}
+        <main class="main sign-up">
+            <section class="registration">
+                <h2>Log in</h2>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <div class="input-group">
+                            <input type="text" name="username" id="username">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-group">
+                            <input type="password" name="password" id="password">
+                        </div>
+                    </div>
+                    {% comment %} <a href="dashboard.html" class="btn">Log In</a> {% endcomment %}
+                    <input type="submit"  class="btn" value="Log In">
+                    <div class="action-grid">
+                        <a href="">Forgotten password?</a>
+                        <a href="{% url 'signup' %}">Sign up</a>
+                    </div>
+                </section>
+            </main>
+        </form>
+    <footer class="footer">
+        <span>ABOUT US</span>
+        <span>SECURITY</span>
+        <span>CONTACT</span>
+        <span>&copy;2022</span>
+    </footer>
+
+    <script src="{% static 'js/dashboard.js' %}"></script>
+</body>
+</html>

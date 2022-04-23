@@ -1,0 +1,45 @@
+{% load static %}
+
+
+
+<header>
+    <div class="logo">
+        <a href="{% url 'index' %}">
+            <img src="{% static 'img/swift+logo+2.+svg.svg' %} " alt="" srcset="">
+        <a>
+    </div>
+    <i class='bx bx-menu open-menu'></i>
+    <nav class="navbar">
+        <i class='bx bx-x close-menu'></i>
+        <ul class="nav-group">
+            <li class="nav-item">
+                <a href="account-info.html" class="bx bxs-user-circle"></a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'send_money' %}" class="nav-link">Send</a>
+            </li>
+             <li class="nav-item">
+                 {% if user.is_authenticated %}
+                    <a href="{% url 'dashboard' %}" class="nav-link">dashboard</a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="nav-link">login</a>
+                 {% endif %}
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'activity' %}" class="nav-link">Activity</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'wallet' %}" class="nav-link">Wallet</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'help' %}" class="nav-link">Help</a>
+            </li>
+        </ul>
+        <div class="logout">
+            <a href="{% url 'logoutUser' %}">Log Out</a>
+        </div>
+    </nav>
+</header>
+
+
+<script src="{% static 'js/dashboard.js' %}"></script>

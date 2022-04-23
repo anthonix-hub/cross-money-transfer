@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% include 'hi_hiApp/head.html' %}
+    <title>HI-hi</title>
+</head>
+<body>
+    <!--Header Section-->
+    {% include 'hi_hiApp/header.html' %}
+    <!--Main-->
+    <main class="main">
+        <section class="content-section">
+            <div class="activity-container">
+                <div class="head-grid">
+                    <div class="date">
+                        <p>Date</p>
+                        <span>21 January 2022</span>
+                    </div>
+                     <div class="search">
+                        <input type="text" name="" id="" placeholder="Search Activities">
+                        <i class='bx bx-search-alt-2' ></i>
+                    </div>
+                </div>        
+                <div class="recent-activity">
+                    <div class="transaction">
+                        <div class="activity-item">
+                            <p>transaction history</p>
+                        </div>
+                        <div class="activity-item">
+                            
+                        </div>
+                    </div>
+                    {% for history in transaction_history %}
+                        <div class="transaction">
+                            <div class="activity-item">
+                                <p>{{history.user}}</p>
+                                <span>{{history.transaction_date}}</span>
+                            </div>
+                            <div class="activity-item">
+                                <p>&#163;{{history.amount}}.00</p>
+                                <span>sent</span>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>    
+    </main>
+    <footer class="footer">
+        <ul class="footer-group">
+            <li class="footer-item">
+                contact us
+            </li>
+             <li class="footer-item">
+                feedback
+            </li>
+             <li class="footer-item">
+                security
+            </li>
+        </ul>
+        <span class="copy" >&copy;2022 All Rights Reserved</span>
+    </footer>
+    <script src="{% static 'js/dashboard.js' %}"></script>
+</body>
+</html>

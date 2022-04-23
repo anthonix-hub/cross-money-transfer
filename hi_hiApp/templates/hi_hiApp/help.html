@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% include 'hi_hiApp/head.html' %}
+    <title>HI-hi</title>
+</head>
+<body>
+    
+    <!--Header Section-->
+    {% include 'hi_hiApp/header.html' %}
+    <!--Main-->
+
+    <main class="main">
+        <section class="help-section">
+            <h3>Hi {{user.username}}, how can we help?</h3>
+            <div class="help-container">
+                
+                <div class="help-card">
+                    <ul class="help-group">
+                        <li> If I forget my Swift Transfa password, how can I get it back?</li>
+                        <li>What should I do if I want my money back?</li>
+                        <li>What is the status of my payment and when will it be available?</li>
+                        <li>What is the procedure for adding, editing, or removing a phone number from my SwiftTransfa account?</li>
+                        <li>How can I get rid of the restriction on my account?</li>
+                        <li>I dont have a SwiftTransfa account, so why am I getting emails from them?</li>
+                    </ul>
+                </div>
+
+                <div class="help-action">
+                    <ul class="help-action-group">
+                        <li>Getting your statement</li>
+                        <li>Seeking Refund</li>
+                        <li>Keeping My Money safe</li>
+                        <li>Swift transfa help guides</li>
+                        <li>my account</li>
+                        <li>my money</li>
+                        <li>payments</li>
+                        <li>credit</li>
+                        <li>disputes & limitations</li>
+                        <li>products & services</li>
+                        <li>merchant</li>
+                        <li>non-profits & donations</li>
+                    </ul>
+                </div>
+                
+            </div>
+        </section>
+
+       
+    </main>
+
+    <footer class="footer">
+        <ul class="footer-group">
+            <li class="footer-item">
+                contact us
+            </li>
+             <li class="footer-item">
+                feedback
+            </li>
+             <li class="footer-item">
+                security
+            </li>
+        </ul>
+        <span class="copy" >&copy;2022 All Rights Reserved</span>
+    </footer>
+
+    <script src="{% static 'js/dashboard.js' %}"></script>
+</body>
+</html>
