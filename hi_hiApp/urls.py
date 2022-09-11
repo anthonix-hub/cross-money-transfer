@@ -12,6 +12,8 @@ urlpatterns = [
     path('transfer_status', views.transfer_status, name='transfer_status'),
     path('wallet', views.wallet, name='wallet'),
     path('welcome', views.welcome, name='welcome'),
+    path('topup', views.topup, name='topup'),
+    path('topup_promp', views.topup_promp, name='topup_promp'),
     
     path('dashboard', views.dashboard, name='dashboard'),
     

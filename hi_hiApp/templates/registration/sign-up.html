@@ -3,12 +3,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/tailwind.css' %}">
     {% include 'hi_hiApp/head.html' %}
     <title>HI-hi</title>
-
     <style>
         header{
             margin-bottom: 50px;
@@ -26,7 +23,7 @@
         <nav class="navbar-sign-up">
             <ul class="nav-group">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="{% url 'index' %}" class="nav-link">Home</a>
                 </li>
             <ul> 
         </nav>
@@ -34,15 +31,16 @@
     <!--Main-->
     <form method="post">
     <main class="main sign-up">
+        <div class="custom-control custom-checkbox text-red-600 text-center -mt-10 -mb-20">
+            {% if form.errors %}
+                <p class='' >
+                    {{form.errors}}  
+                </p>
+            {% endif %}
+        </div>
         <section class="registration">
             <h2>Sign up</h2>
                 {% csrf_token %}
-                {% comment %} <div class="form-group">
-                    <label for="name">Names</label>
-                    <div class="input-group">
-                       <input type="text" name="names" id="names">
-                    </div>
-                </div> {% endcomment %}
                 <div class="form-group">
                     <label for="username">username</label>
                     <div class="input-group">
@@ -62,6 +60,9 @@
                        <input type="tel" name="phone_number" id="phone_number">
                     </div>
                 </div>
+                <span class="text-xs text-center  -mb-10">
+                    password should have minimum of eight(8) charaters, and not similar to the username
+                </span>
                 <div class="form-group">
                     <label for="password">Password</label>
                     <div class="input-group">
@@ -74,7 +75,6 @@
                        <input type="password" name="password2" id="password2">
                     </div>
                 </div> 
-                {% comment %} {{form}} {% endcomment %}
                 <div class="check-box-group">
                     <input type="checkbox" name="" id="cookies"> 
                     <label for="cookies">I accept the terms of services and privacy policy.</label>

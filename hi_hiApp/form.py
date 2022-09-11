@@ -5,15 +5,11 @@ from django.db import models
 from django.forms import ModelForm, fields, widgets
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from django_countries import countries
 
 
 
 class signupForm(UserCreationForm):
-# class signupForm(forms.ModelForm):
     username = forms.CharField(max_length=30,widget=forms.TextInput(attrs={'placeholder':('Username')}),)
-    # first_name = forms.CharField(max_length =50,required =False,widget=forms.TextInput(attrs={'placeholder':('First name')}), )
-    # last_name = forms.CharField(max_length =50,required =False,widget=forms.TextInput(attrs={'placeholder':('Last name')}), )
     names = forms.CharField(max_length=50, required=False, widget=forms.TextInput(attrs={'placeholder':('names')}), )
     email = forms.EmailField(max_length=200, required=True, widget=forms.TextInput(attrs={'placeholder':('email')}),)
     phone_number = forms.CharField(widget=forms.TextInput(attrs={'placeholder':('Phone Number')}),
@@ -46,3 +42,12 @@ class sending_moneyForm(ModelForm):
                   'amount'
                 )
     
+class top_upForm(ModelForm):
+    class Meta:
+        model = users_wallet
+        fields = (
+            # 'user',
+            'credict_ballance',
+            'Currency',
+            'Billing_Address',
+        )

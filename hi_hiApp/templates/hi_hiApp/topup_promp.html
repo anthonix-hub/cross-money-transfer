@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include 'hi_hiApp/head.html' %}
+    <title>HI-hi</title>
+
+    <style>
+        @media screen and (max-width:570px) {
+            .registration{
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!--Header Section-->
+    <header>
+         <div class="logo">
+            <img src="{% static 'img/swift+logo+2.+svg.svg' %}" alt="" srcset="">
+        </div>
+        <nav class="navbar-sign-up">
+            <ul class="nav-group">
+                <li class="nav-item">
+                    <a href="{% url 'index' %}" class="nav-link">Home</a>
+                </li>
+            <ul> 
+        </nav>
+    </header>
+
+    <!--Main-->
+
+    <main class="main sign-up">
+        <section class="registration">
+            <h2>Done</h2>
+        
+           <h3>Account credited succesfully</h3>
+        
+            <i class='bx bxs-checkbox-checked' ></i>            
+            <a href="{% url 'dashboard' %}" class="btn">dashboard</a>
+           
+           
+        </section>
+
+  
+    </main>
+
+    <script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>

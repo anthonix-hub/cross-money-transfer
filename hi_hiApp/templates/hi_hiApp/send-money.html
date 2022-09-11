@@ -34,23 +34,21 @@
         {% csrf_token %}
         <main class="main "> 
             <section class="">
+                <h3 class="text-xl -mt-12 ">Send Money <i class='bx bxs-right-arrow-square'></i></h3>
                 <div class="send-main py-12 px-1 md:px-4 border-2 block rounded-md ">
-                    <div class="border-2 px-4 md:px-20 py-12 shadow-xl rounded-md ">
+                    <div class="border-2 px-2 md:px-20 py-8 shadow-xl rounded-md ">
                         <!-- {{transaction_form}} -->
                         <div class="flex items-center bg-gray-50 border pl-3 py- ">
-                            <label for="Name" class="text-md">Send&nbsp;money&nbsp;to:</label>
-                            <input type="text" name="user" id="user" class="px-2 py-2 outline-none " placeholder="enter receiver's name">
+                            <label for="Name" class="md:text-sm text-xs">Send&nbsp;money&nbsp;to:</label>
+                            <input type="text" name="user" id="user" class="px-2 py-2 outline-none w-2/4 " placeholder="Recipient">
+                            <i class="text-xl bx bx-user-plus"></i>
                         </div>
                         <div class="mt-2 ">
                             <div class="flag-group flex border">
-                                <input type="text" placeholder="amount" name="amount" id="amount" class="px-2 outline-none border py-2">
+                                <input type="text" placeholder="amount" name="amount" id="amount" class="px-2 outline-none border py-2  ">
                                 <select name="Currency" id="Currency">
                                     <option value="NG">🇳🇬NG</option>
                                     <option value="GH">🇬🇭GH</option>
-                                    <option value="UK">🇬🇧UK</option>
-                                    <!-- <option value="CH">🇨🇳CH</option>
-                                    <option value="USA">🇺🇸USA</option>
-                                    <option value="SNG">🇸🇬SNG</option> -->
                                 </select>
                             </div>
                         </div>
@@ -62,29 +60,6 @@
                     </div>
                 </div>
             </section>
-            {% comment %} <section class="content-section">
-                <div class="send-main">
-                    <div class="send-card">
-                        <div class="form-group">
-                           <p>Send&nbsp;money&nbsp;to</p>
-                            <input type="text" name="" id="send" placeholder="Enter amount">
-                        </div>
-                        <div class="flag-group">
-                            <select name="countries" id="">
-                                <option value="NG">🇳🇬NG</option>
-                                <option value="">🇬🇭GH</option>
-                                <option value="">🇨🇳CH</option>
-                                <option value="">🇺🇸USA</option>
-                                <option value="">🇬🇧UK</option>
-                                <option value="">🇸🇬SNG</option>
-                            </select>
-                        </div>
-                        <div>
-                            <button style="background:#ffc;height:25px;padding:4px">Send&nbsp;money</button>
-                        </div>
-                    </div>
-                </div>
-            </section>       {% endcomment %}
         </main>
     </form>
 
